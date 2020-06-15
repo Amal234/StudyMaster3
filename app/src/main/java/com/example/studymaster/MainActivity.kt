@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
 
-        //************************* TODO:binding
+        //************************* TODO:binding**********************************//
 
         // to get reference to the button and  and assign it to immutable variable
         val aboutbutton: Button = findViewById(R.id.about_button)
         val imagebutton: ImageButton = findViewById(R.id.start_button)
 
 imagebutton.setOnClickListener{
-    Toast.makeText(this, "image button clicked " , Toast.LENGTH_SHORT).show()
+    Toast.makeText(this, "image button wurde clicked" , Toast.LENGTH_SHORT).show()
 }
         // to add an action
         aboutbutton.setOnClickListener {
