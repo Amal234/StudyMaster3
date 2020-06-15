@@ -12,10 +12,9 @@ import android.widget.TextView
  */
 class My_Study_Plan_Fragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle? ): View? {
+        //val binding = DataBindingUtil.inflate<My_Study_Plan_Fragment>
 
         return inflater.inflate(R.layout.mystudyplan, container, false)
     }

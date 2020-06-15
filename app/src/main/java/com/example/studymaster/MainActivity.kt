@@ -5,15 +5,25 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import com.example.studymaster.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)  // if we delete this line -> the Hello world message will disappear
+        //setContentView(R.layout.activity_main)
+
+        binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
+
+        //*************************
+
         // to get reference to the button and  and assign it to immutable variable
         val aboutbutton: Button = findViewById(R.id.about_button)
         val imagebutton: ImageButton = findViewById(R.id.start_button)
+
 imagebutton.setOnClickListener{
     Toast.makeText(this, "image button clicked " , Toast.LENGTH_SHORT).show()
 }
@@ -23,4 +33,6 @@ imagebutton.setOnClickListener{
             Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
         }
     }
+
+    //**********************************************
 }
