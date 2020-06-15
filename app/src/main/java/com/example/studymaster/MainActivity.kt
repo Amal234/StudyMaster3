@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
 
-        //*************************
-        //TODO:binding
+        //************************* TODO:binding
 
         // to get reference to the button and  and assign it to immutable variable
         val aboutbutton: Button = findViewById(R.id.about_button)
