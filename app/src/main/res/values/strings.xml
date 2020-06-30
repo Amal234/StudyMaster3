@@ -21,6 +21,8 @@
     <string name="play_button">play</string>
     <string name="pause_button">pause</string>
     <string name="time_circle">timeCuircle</string>
+    <string name="sun_button">S</string>
+    <string name="mon_button">M</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

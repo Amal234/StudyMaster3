@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment
  * A simple [Fragment] subclass.
  */
 class Timer_Fragment : Fragment() {
-
+data class Timer(val text: String)
 
     // private TextView countdowntext;
     //private Button
