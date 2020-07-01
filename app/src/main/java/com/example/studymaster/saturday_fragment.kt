@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import com.example.studymaster.databinding.FragmentWeekdaysBinding
+import com.example.studymaster.databinding.SaturdayBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -16,7 +19,9 @@ class saturday_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.saturday,container,false)
+        val binding: SaturdayBinding = DataBindingUtil.inflate(
+            inflater, R.layout.saturday, container, false)
+        return binding.root
         }
     }
 

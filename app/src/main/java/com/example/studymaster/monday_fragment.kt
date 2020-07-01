@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import com.example.studymaster.databinding.MondayBinding
+import com.example.studymaster.databinding.SaturdayBinding
+import java.util.*
 
 /**
  * A simple [Fragment] subclass.
@@ -15,8 +19,12 @@ class monday_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.monday, container, false)
+        val binding: MondayBinding = DataBindingUtil.inflate(
+            inflater, R.layout.monday, container, false)
+        return binding.root
         }
+
+
 
     }
 
