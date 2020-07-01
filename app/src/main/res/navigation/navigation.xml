@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/navigation"
+    app:startDestination="@id/week_days_Fragment">
+
+    <fragment
+        android:id="@+id/week_days_Fragment"
+        android:name="com.example.studymaster.week_days_Fragment"
+        android:label="week_days_Fragment" />
+    <fragment
+        android:id="@+id/monday_fragment"
+        android:name="com.example.studymaster.monday_fragment"
+        android:label="monday_fragment" />
+    <fragment
+        android:id="@+id/tuesday_fragment"
+        android:name="com.example.studymaster.tuesday_fragment"
+        android:label="tuesday_fragment" />
+    <fragment
+        android:id="@+id/wednesday_fragment"
+        android:name="com.example.studymaster.wednesday_fragment"
+        android:label="wednesday_fragment" />
+    <fragment
+        android:id="@+id/thursday_fragment"
+        android:name="com.example.studymaster.thursday_fragment"
+        android:label="thursday_fragment" />
+    <fragment
+        android:id="@+id/friday_fragment"
+        android:name="com.example.studymaster.friday_fragment"
+        android:label="friday_fragment" />
+    <fragment
+        android:id="@+id/saturday_fragment"
+        android:name="com.example.studymaster.saturday_fragment"
+        android:label="saturday_fragment" />
+    <fragment
+        android:id="@+id/sunday_fragment"
+        android:name="com.example.studymaster.sunday_fragment"
+        android:label="sunday_fragment" />
+    <fragment
+        android:id="@+id/subject_Statistics_Fragement"
+        android:name="com.example.studymaster.Subject_Statistics_Fragement"
+        android:label="Subject_Statistics_Fragement" />
+    <fragment
+        android:id="@+id/timer_Fragment"
+        android:name="com.example.studymaster.Timer_Fragment"
+        android:label="Timer_Fragment" />
+</navigation>
