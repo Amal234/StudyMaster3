@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import com.example.studymaster.databinding.FragmentWeekdaysBinding
+
 
 /**
  * A simple [Fragment] subclass.
@@ -17,7 +20,16 @@ class week_days_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.week_days,container,false)
-    }
+        val binding: FragmentWeekdaysBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_weekdays, container, false
+        )
 
+        binding.buttonStats.setOnClickListener (
+            Navigation.createNavigateOnClickListener(R.id.action_week_days_Fragment_to_subject_Statistics_Fragement)
+
+        )
+
+
+        return binding.root
+    }
 }
