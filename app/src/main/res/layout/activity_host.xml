@@ -6,9 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".hostActivity">
 
-    <include
-        android:id="@+id/include_id"
-        layout="@layout/week_days"></include>
+    <fragment
+        android:id="@+id/NavHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:navGraph="@navigation/navigation"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

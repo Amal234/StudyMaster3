@@ -46,18 +46,4 @@
             android:orientation="vertical" />
     </ScrollView>
 
-    <Button
-        android:id="@+id/statistics_button"
-        android:layout_width="322dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="26dp"
-        android:text="my subject statistics"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scroll_view" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

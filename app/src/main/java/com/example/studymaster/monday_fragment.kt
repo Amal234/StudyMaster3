@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 
 /**
  * A simple [Fragment] subclass.
@@ -16,7 +15,7 @@ class monday_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.m_list, container, false)
+        return inflater.inflate(R.layout.monday, container, false)
         }
 
     }
