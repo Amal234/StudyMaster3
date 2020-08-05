@@ -1,5 +1,6 @@
 package com.example.studymaster
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
@@ -59,7 +60,6 @@ class hostActivity : AppCompatActivity() {
         binding.buttonStats.setOnClickListener {
             supportFragmentManager.beginTransaction().replace(R.id.container, fragmentStats).commit()
         }
-
 
     }
 }
