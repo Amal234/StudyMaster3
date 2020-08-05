@@ -1,50 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/navigation"
-    app:startDestination="@id/week_days_Fragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/monday_fragment">
 
-    <fragment
-        android:id="@+id/week_days_Fragment"
-        android:name="com.example.studymaster.week_days_Fragment"
-        android:label="week_days_Fragment" >
-        <action
-            android:id="@+id/action_week_days_Fragment_to_monday_fragment"
-            app:destination="@id/monday_fragment" />
-        <action
-            android:id="@+id/action_week_days_Fragment_to_tuesday_fragment"
-            app:destination="@id/tuesday_fragment" />
-        <action
-            android:id="@+id/action_week_days_Fragment_to_wednesday_fragment"
-            app:destination="@id/wednesday_fragment" />
-        <action
-            android:id="@+id/action_week_days_Fragment_to_thursday_fragment"
-            app:destination="@id/thursday_fragment" />
-        <action
-            android:id="@+id/action_week_days_Fragment_to_friday_fragment"
-            app:destination="@id/friday_fragment" />
-        <action
-            android:id="@+id/action_week_days_Fragment_to_saturday_fragment"
-            app:destination="@id/saturday_fragment" />
-        <action
-            android:id="@+id/action_week_days_Fragment_to_sunday_fragment"
-            app:destination="@id/sunday_fragment" />
-        <action
-            android:id="@+id/action_week_days_Fragment_to_subject_Statistics_Fragement"
-            app:destination="@id/subject_Statistics_Fragement" />
-    </fragment>
-    <fragment
-        android:id="@+id/monday_fragment"
-        android:name="com.example.studymaster.monday_fragment"
-        android:label="monday_fragment" >
-        <action
-            android:id="@+id/action_monday_fragment_to_timer_Fragment"
-            app:destination="@id/timer_Fragment" />
-    </fragment>
     <fragment
         android:id="@+id/tuesday_fragment"
         android:name="com.example.studymaster.tuesday_fragment"
         android:label="tuesday_fragment" >
+        <action
+            android:id="@+id/action_tuesday_fragment_to_subject_Statistics_Fragement"
+            app:destination="@id/subject_Statistics_Fragement" />
         <action
             android:id="@+id/action_tuesday_fragment_to_timer_Fragment"
             app:destination="@id/timer_Fragment" />
@@ -56,6 +23,9 @@
         <action
             android:id="@+id/action_wednesday_fragment_to_timer_Fragment"
             app:destination="@id/timer_Fragment" />
+        <action
+            android:id="@+id/action_wednesday_fragment_to_subject_Statistics_Fragement"
+            app:destination="@id/subject_Statistics_Fragement" />
     </fragment>
     <fragment
         android:id="@+id/thursday_fragment"
@@ -64,6 +34,9 @@
         <action
             android:id="@+id/action_thursday_fragment_to_timer_Fragment"
             app:destination="@id/timer_Fragment" />
+        <action
+            android:id="@+id/action_thursday_fragment_to_subject_Statistics_Fragement"
+            app:destination="@id/subject_Statistics_Fragement" />
     </fragment>
     <fragment
         android:id="@+id/friday_fragment"
@@ -72,6 +45,9 @@
         <action
             android:id="@+id/action_friday_fragment_to_timer_Fragment"
             app:destination="@id/timer_Fragment" />
+        <action
+            android:id="@+id/action_friday_fragment_to_subject_Statistics_Fragement"
+            app:destination="@id/subject_Statistics_Fragement" />
     </fragment>
     <fragment
         android:id="@+id/saturday_fragment"
@@ -80,6 +56,9 @@
         <action
             android:id="@+id/action_saturday_fragment_to_timer_Fragment"
             app:destination="@id/timer_Fragment" />
+        <action
+            android:id="@+id/action_saturday_fragment_to_subject_Statistics_Fragement"
+            app:destination="@id/subject_Statistics_Fragement" />
     </fragment>
     <fragment
         android:id="@+id/sunday_fragment"
@@ -88,6 +67,9 @@
         <action
             android:id="@+id/action_sunday_fragment_to_timer_Fragment"
             app:destination="@id/timer_Fragment" />
+        <action
+            android:id="@+id/action_sunday_fragment_to_subject_Statistics_Fragement"
+            app:destination="@id/subject_Statistics_Fragement" />
     </fragment>
     <fragment
         android:id="@+id/subject_Statistics_Fragement"
@@ -97,4 +79,15 @@
         android:id="@+id/timer_Fragment"
         android:name="com.example.studymaster.Timer_Fragment"
         android:label="Timer_Fragment" />
+    <fragment
+        android:id="@+id/monday_fragment"
+        android:name="com.example.studymaster.monday_fragment"
+        android:label="monday_fragment">
+        <action
+            android:id="@+id/action_monday_fragment_to_timer_Fragment"
+            app:destination="@id/timer_Fragment" />
+        <action
+            android:id="@+id/action_monday_fragment_to_subject_Statistics_Fragement"
+            app:destination="@id/subject_Statistics_Fragement" />
+    </fragment>
 </navigation>

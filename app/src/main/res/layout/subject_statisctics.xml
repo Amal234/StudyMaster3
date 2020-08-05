@@ -6,6 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".hostActivity">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+    </RelativeLayout>
     <ScrollView
         android:id="@+id/statistics_scroll"
         android:layout_width="414dp"
@@ -24,7 +35,148 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical" >
+
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Total Study Time for each Subjects"
+                android:textSize="25sp"
+                android:layout_gravity="center"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                android:layout_marginleft="10dp"
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="DataBase" />
+
+
+
+
+                <ProgressBar
+                    android:id="@+id/DBBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:minHeight="50dp"
+                    android:minWidth="120dp"
+                    android:progress="1"
+                    android:progressBackgroundTint="@android:color/holo_blue_light"
+                    android:progressTint="@color/colorPrimary" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MAD" />
+
+                <ProgressBar
+                    android:id="@+id/MADBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:minHeight="50dp"
+                    android:minWidth="200dp"
+                    android:progress="1"
+                    android:progressBackgroundTint="@android:color/holo_red_light"
+                    android:progressTint="@color/colorPrimary" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Internet of Things" />
+
+                <ProgressBar
+                    android:id="@+id/IOTBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:minHeight="50dp"
+                    android:minWidth="190dp"
+                    android:progress="1"
+                    android:progressBackgroundTint="@android:color/holo_green_dark"
+                    android:progressTint="@color/colorPrimary" tools:targetApi="lollipop" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Modern Networks" />
+
+                <ProgressBar
+                    android:id="@+id/MNBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:minHeight="50dp"
+                    android:minWidth="150dp"
+                    android:progress="1"
+                    android:progressBackgroundTint="@android:color/holo_orange_dark"
+                    android:progressTint="@color/colorPrimary" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subjectstatistics" />
+
+                <ProgressBar
+                    android:id="@+id/SATBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:minHeight="50dp"
+                    android:minWidth="100dp"
+                    android:progress="1"
+                    android:progressBackgroundTint="@android:color/holo_purple"
+                    android:progressTint="@color/colorPrimary" />
+            </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
 
     <Button
@@ -35,9 +187,8 @@
         android:layout_marginTop="33dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="26dp"
-        android:text="Reset all statistics"
+        android:text="@string/reset_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scroll_view" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

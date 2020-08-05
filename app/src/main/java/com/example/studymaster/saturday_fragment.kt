@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
-import com.example.studymaster.databinding.FragmentWeekdaysBinding
 import com.example.studymaster.databinding.SaturdayBinding
 
 /**

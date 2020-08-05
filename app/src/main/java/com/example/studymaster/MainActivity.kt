@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         // to add an action
         //binding.aboutButton.setOnClickListener
+
     }
 
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#0E6041"
+    android:textAlignment="center"
     app:title="Weekly Planner"
     app:titleTextColor="@color/white">
 
