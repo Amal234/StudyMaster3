@@ -6,17 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".hostActivity">
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"/>
-
-    </RelativeLayout>
     <ScrollView
         android:id="@+id/statistics_scroll"
         android:layout_width="414dp"
@@ -175,6 +164,14 @@
                     android:progress="1"
                     android:progressBackgroundTint="@android:color/holo_purple"
                     android:progressTint="@color/colorPrimary" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".hostActivity">
+
+
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

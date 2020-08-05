@@ -3,7 +3,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/monday_fragment">
+    app:startDestination="@id/startFragment"
+    android:visibility="gone"
+    >
 
     <fragment
         android:id="@+id/tuesday_fragment"
@@ -89,5 +91,13 @@
         <action
             android:id="@+id/action_monday_fragment_to_subject_Statistics_Fragement"
             app:destination="@id/subject_Statistics_Fragement" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.studymaster.startFragment"
+        android:label="startFragment" >
+        <action
+            android:id="@+id/action_startFragment_to_monday_fragment"
+            app:destination="@id/monday_fragment" />
     </fragment>
 </navigation>

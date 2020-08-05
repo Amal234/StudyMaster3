@@ -18,7 +18,7 @@
             app:defaultNavHost="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:navGraph="@navigation/navigation" />
+            app:navGraph="@navigation/navigation"/>
 
         <include
             android:id="@+id/toolbar"

@@ -26,7 +26,7 @@ class hostActivity : AppCompatActivity() {
 
         val fragmentMo = monday_fragment()
         binding.buttonMo.setOnClickListener {
-            supportFragmentManager.beginTransaction().add(R.id.container, fragmentMo).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.container, fragmentMo).commit()
         }
 
         val fragmentTu = tuesday_fragment()
