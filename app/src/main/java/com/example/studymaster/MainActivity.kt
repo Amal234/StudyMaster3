@@ -1,8 +1,10 @@
 package com.example.studymaster
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
@@ -32,6 +34,10 @@ class MainActivity : AppCompatActivity() {
 
         // to add an action
         //binding.aboutButton.setOnClickListener
+
+        //Mandatory code to hide the keyboard after typing
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(currentFocus?.windowToken,0)
 
     }
 
