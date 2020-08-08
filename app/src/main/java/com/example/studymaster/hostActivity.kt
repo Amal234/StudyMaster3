@@ -8,6 +8,7 @@ import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.studymaster.databinding.ActivityHostBinding
 import kotlinx.android.synthetic.main.activity_host.*
@@ -23,6 +24,8 @@ class hostActivity : AppCompatActivity() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar?
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true);
 
         val binding =
             DataBindingUtil.setContentView<ActivityHostBinding>(this, R.layout.activity_host)
@@ -78,6 +81,14 @@ class hostActivity : AppCompatActivity() {
             imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
         }
         return super.dispatchTouchEvent(ev)
+    }
+    // Extension function to replace fragment
+    fun AppCompatActivity.replaceFragment(fragment: Fragment){
+        val fragmentManager = supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.NavHostFragment,fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
 }
