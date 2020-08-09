@@ -7,4 +7,6 @@
 
     </style>
 
+    <style name="NameStyle">string</style>
+
 </resources>

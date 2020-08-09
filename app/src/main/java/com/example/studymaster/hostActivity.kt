@@ -27,7 +27,8 @@ class hostActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
 
-        val binding =
+        val binding
+                =
             DataBindingUtil.setContentView<ActivityHostBinding>(this, R.layout.activity_host)
 
 

@@ -23,7 +23,13 @@
     <string name="time_circle">timeCuircle</string>
     <string name="sun_button">S</string>
     <string name="mon_button">M</string>
+    <string name="bio">
+  “We work together to design, develop and create useful apps that we are proud of for folks that we believe in.” – our team, Mehtamalone
+Amal, Mehtap and Oana are students at the University of applied Sciences Fh Campus Wien. They developed Study Master to help students track their progress and stay motivated during their learning sessions.
+For support, contact us at mehtamalone@gmail.com
+Have fun expanding your knowledges!
 
+    </string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
