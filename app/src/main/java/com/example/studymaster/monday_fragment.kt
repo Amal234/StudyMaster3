@@ -26,8 +26,6 @@ import java.util.*
  */
 class monday_fragment : Fragment() {
 
-
-
     val arrayList = ArrayList<String>()//Creating an empty arraylist.
 
 
@@ -47,7 +45,6 @@ class monday_fragment : Fragment() {
 
 
 
-
         addButton.setOnClickListener {
             val subject = editText.text
             arrayList.add(subject.toString())
@@ -57,7 +54,7 @@ class monday_fragment : Fragment() {
             subjectList.adapter = adapter
 
 
-            /* val v =  inflater.inflate(R.layout.monday, container, false)
+            /*val v =  inflater.inflate(R.layout.monday, container, false)
             // Extension function to replace fragment
             fun AppCompatActivity.replaceFragment(fragment: Fragment){
                 val fragmentManager = supportFragmentManager
@@ -77,14 +74,14 @@ class monday_fragment : Fragment() {
                 val myIntent = Intent( activity as Context, Timer_Fragment::class.java)
                 startActivity(myIntent)
 
-           }*/
+           }
     mylist.setOnItemClickListener{
     parent, view, position, id ->
 
     Toast.makeText(activity as Context, "blabla:" , Toast.LENGTH_SHORT).show()
 
 
-}
+}*/
         }
 
         //Mandatory code to hide the keyboard after typing
