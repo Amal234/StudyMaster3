@@ -26,6 +26,7 @@ class hostActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
+        this.setTitle("Weekly Planner")
 
         val binding
                 =

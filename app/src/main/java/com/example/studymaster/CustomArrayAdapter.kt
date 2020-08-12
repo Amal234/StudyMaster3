@@ -1,21 +1,24 @@
-/*package com.example.studymaster
+package com.example.studymaster
 
-import android.R
+import android.annotation.SuppressLint
 import android.content.Context
+import android.system.Os.remove
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.Button
-import android.widget.ListAdapter
-import android.widget.TextView
+import android.widget.*
+import com.example.studymaster.monday_fragment
+import javax.security.auth.Subject
 
 
-class MyCustomAdapter(list: ArrayList<String>, context: Context) : BaseAdapter(), ListAdapter {
+class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: ArrayList<String>, context: Context) : BaseAdapter(), ListAdapter {
 
 
-    private val list = ArrayList<String>()
-    private val context: Context
+
+    private val inflater =
+        context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+
     override fun getCount(): Int {
         return list.size
     }
@@ -25,48 +28,47 @@ class MyCustomAdapter(list: ArrayList<String>, context: Context) : BaseAdapter()
     }
 
     override fun getItemId(pos: Int): Long {
-        return  0
+        return 0
         //just return 0 if your list items do not have an Id variable.
     }
 
+    @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
-        var view: View? = convertView
-        if (view == null) {
-            val inflater =
-                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            view = inflater.inflate(R.layout.
+        val rowView = inflater.inflate(R.layout.custom_item_layout, parent, false)
+
+        //All Elements in our customlayout
+        val listItemText =
+            rowView.findViewById(R.id.list_item_string) as TextView
+            listItemText.text = list[position]
+
+
+        val TimeItemView = rowView.findViewById(R.id.Time) as TextView
+        TimeItemView.text = tlist[position]
+
+        val imageButtonColour = rowView.findViewById(R.id.image_Colour) as ImageButton
+        val imageButtonDelete = rowView.findViewById(R.id.image_Delete) as ImageButton
+        val imageButtonStart = rowView.findViewById(R.id.image_Start) as ImageButton
+
+
+        /*addButton.setOnClickListener {
+            val subject = editText.text
+            arrayList.add(subject.toString())
+
+            subjectList.adapter = adapter
+            timeSpinner.adapter = adapter_time
+
+
+            //Methods? (for populate and/or do something) of the elements above
+            imageButtonDelete.setOnClickListener {
+                //do something
+
+                listItemText.remove()
+                notifyDataSetChanged()
+            */
+
+
+
+            return rowView
+
         }
-
-        //Handle TextView and display string from your list
-        val listItemText = view.findViewById(R.id.list_item_string) as TextView
-        listItemText.text = list[position]
-
-        //Handle buttons and add onClickListeners
-        val deleteBtn: Button = view?.findViewById(R.id.) as Button
-        val addBtn: Button = view?.findViewById(R.id.add_btn) as Button
-        deleteBtn.setOnClickListener(object : View.OnClickListener() {
-            fun onClick(v: View?) {
-                //do something
-                list.remove(position) //or some other task
-                notifyDataSetChanged()
-            }
-        })
-        addBtn.setOnClickListener(object : View.OnClickListener() {
-            fun onClick(v: View?) {
-                //do something
-                notifyDataSetChanged()
-            }
-        })
-        return view
-    }
-
-    init {
-        this.list = list
-        this.context = context
-    }
 }
-class CustomArrayAdapter {
-}
-
-
- */

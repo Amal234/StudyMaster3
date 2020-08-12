@@ -17,8 +17,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.Navigation
 import com.example.studymaster.databinding.MondayBinding
+import kotlinx.android.synthetic.main.custom_item_layout.*
+import kotlinx.android.synthetic.main.custom_item_layout.view.*
 import kotlinx.android.synthetic.main.monday.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 /**
@@ -26,7 +29,8 @@ import java.util.*
  */
 class monday_fragment : Fragment() {
 
-    val arrayList = ArrayList<String>()//Creating an empty arraylist.
+    val myarrayList = ArrayList<String>()//Array for user input Subject
+    val arrayTime = ArrayList<String>() //Array for user-choosen Time
 
 
     @SuppressLint("ServiceCast")
@@ -41,61 +45,33 @@ class monday_fragment : Fragment() {
         )
 
         val addButton = binding.addButton
-        val subjectList = binding.mylist
+        val subjectList= binding.mylist
+        val timeList = binding.mylist
+        //val timeSpinner= binding.TimeSpinner
 
+        val adapter = MyCustomAdapter(myarrayList, arrayTime, activity as Context)
+
+
+        //adapter for subject
+        //val adapter: ArrayAdapter<*> = ArrayAdapter(activity as Context, android.R.layout.simple_list_item_1, arrayList)
+
+       //
+        //val adapter_time= ArrayAdapter.createFromResource (activity as Context, R.array.subjectTimeList, android.R.layout.simple_spinner_item)
 
 
         addButton.setOnClickListener {
             val subject = editText.text
-            arrayList.add(subject.toString())
-            var adapter: ArrayAdapter<*>
+            val time = TimeSpinner.selectedItem
+            myarrayList.add(subject.toString())
+            arrayTime.add(time.toString())
 
-            adapter = ArrayAdapter(activity as Context, android.R.layout.simple_list_item_1, arrayList)
             subjectList.adapter = adapter
-
-
-            /*val v =  inflater.inflate(R.layout.monday, container, false)
-            // Extension function to replace fragment
-            fun AppCompatActivity.replaceFragment(fragment: Fragment){
-                val fragmentManager = supportFragmentManager
-                val transaction = fragmentManager.beginTransaction()
-                transaction.replace(R.id.NavHostFragment,fragment)
-                transaction.addToBackStack(null)
-                transaction.commit()
-            }
-            binding.mylist.setOnClickListener {
-                val context = activity as AppCompatActivity
-                context.replaceFragment(Timer_Fragment())
-
-            }
-           binding.mylist.setOnItemClickListener{
-                    parent, view, position, id -> Navigation.createNavigateOnClickListener(R.id.action_monday_fragment_to_timer_Fragment)
-
-                val myIntent = Intent( activity as Context, Timer_Fragment::class.java)
-                startActivity(myIntent)
-
-           }
-    mylist.setOnItemClickListener{
-    parent, view, position, id ->
-
-    Toast.makeText(activity as Context, "blabla:" , Toast.LENGTH_SHORT).show()
-
-
-}*/
+            timeList.adapter = adapter
         }
-
-        //Mandatory code to hide the keyboard after typing
-
-        val sensorManager =
-            activity!!.getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
         return binding.root
-
         }
-
 }
-
-
 
 
 

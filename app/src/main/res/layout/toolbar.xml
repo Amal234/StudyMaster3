@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.appcompat.widget.Toolbar
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -6,7 +7,7 @@
     android:layout_height="wrap_content"
     android:background="#0E6041"
     android:textAlignment="center"
-    app:title="Weekly Planner"
+    app:title="@string/toolbarTitle"
     app:titleTextColor="@color/white">
 
 </androidx.appcompat.widget.Toolbar>

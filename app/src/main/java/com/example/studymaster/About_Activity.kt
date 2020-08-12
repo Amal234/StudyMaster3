@@ -1,12 +1,12 @@
 package com.example.studymaster
 
-import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import com.example.studymaster.databinding.ActivityAboutBinding
-import com.example.studymaster.databinding.ActivityHostBinding
+
 
 class About_Activity : AppCompatActivity() {
 
@@ -18,6 +18,7 @@ class About_Activity : AppCompatActivity() {
 
         val toolbar = findViewById(R.id.toolbar) as Toolbar?
         setSupportActionBar(toolbar)
+        //getSupportActionBar()?.setTitle("Your title");
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
