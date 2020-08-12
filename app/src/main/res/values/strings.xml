@@ -7,7 +7,7 @@
     <string name="Start_button">START MY PLAN STUDYPLAN</string>
     <string name="studyplan">My Studyplan</string>
     <string name="weekdays">Choose subjects for each day</string>
-    <string name="entersubject">Enter subject name here</string>
+    <string name="entersubject">Enter subject</string>
     <string name="Add_button">Add</string>
     <string name="subjectstatistics">My subject statistics</string>
     <string name="timerheader">What a great day</string>

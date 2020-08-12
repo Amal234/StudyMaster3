@@ -84,10 +84,7 @@
             android:id="@+id/action_subject_Statistics_Fragement_to_timer_Activity"
             app:destination="@id/timer_Activity" />
     </fragment>
-    <fragment
-        android:id="@+id/timer_Fragment"
-        android:name="com.example.studymaster.Timer_Fragment"
-        android:label="Timer_Fragment" />
+
     <fragment
         android:id="@+id/monday_fragment"
         android:name="com.example.studymaster.monday_fragment"
