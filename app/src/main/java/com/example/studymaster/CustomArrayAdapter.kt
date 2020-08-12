@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.Navigation
 import com.example.studymaster.monday_fragment
 import javax.security.auth.Subject
 
@@ -65,10 +66,12 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
                 listItemText.remove()
                 notifyDataSetChanged()
             */
+     
 
 
 
             return rowView
 
         }
+
 }

@@ -15,60 +15,63 @@
             android:id="@+id/action_tuesday_fragment_to_subject_Statistics_Fragement"
             app:destination="@id/subject_Statistics_Fragement" />
         <action
-            android:id="@+id/action_tuesday_fragment_to_timer_Fragment"
-            app:destination="@id/timer_Fragment" />
+            android:id="@+id/action_tuesday_fragment_to_timer_Activity"
+            app:destination="@id/timer_Activity" />
     </fragment>
     <fragment
         android:id="@+id/wednesday_fragment"
         android:name="com.example.studymaster.wednesday_fragment"
         android:label="wednesday_fragment" >
         <action
-            android:id="@+id/action_wednesday_fragment_to_timer_Fragment"
-            app:destination="@id/timer_Fragment" />
-        <action
             android:id="@+id/action_wednesday_fragment_to_subject_Statistics_Fragement"
             app:destination="@id/subject_Statistics_Fragement" />
+        <action
+            android:id="@+id/action_wednesday_fragment_to_timer_Activity"
+            app:destination="@id/timer_Activity" />
     </fragment>
     <fragment
         android:id="@+id/thursday_fragment"
         android:name="com.example.studymaster.thursday_fragment"
         android:label="thursday_fragment" >
         <action
-            android:id="@+id/action_thursday_fragment_to_timer_Fragment"
-            app:destination="@id/timer_Fragment" />
-        <action
             android:id="@+id/action_thursday_fragment_to_subject_Statistics_Fragement"
             app:destination="@id/subject_Statistics_Fragement" />
+        <action
+            android:id="@+id/action_thursday_fragment_to_timer_Activity"
+            app:destination="@id/timer_Activity" />
     </fragment>
     <fragment
         android:id="@+id/friday_fragment"
         android:name="com.example.studymaster.friday_fragment"
         android:label="friday_fragment" >
         <action
-            android:id="@+id/action_friday_fragment_to_timer_Fragment"
-            app:destination="@id/timer_Fragment" />
-        <action
             android:id="@+id/action_friday_fragment_to_subject_Statistics_Fragement"
             app:destination="@id/subject_Statistics_Fragement" />
+        <action
+            android:id="@+id/action_friday_fragment_to_timer_Activity2"
+            app:destination="@id/timer_Activity" />
+        <action
+            android:id="@+id/action_friday_fragment_to_timer_Activity3"
+            app:destination="@id/timer_Activity" />
+        <action
+            android:id="@+id/action_friday_fragment_to_timer_Activity4"
+            app:destination="@id/timer_Activity" />
     </fragment>
     <fragment
         android:id="@+id/saturday_fragment"
         android:name="com.example.studymaster.saturday_fragment"
         android:label="saturday_fragment" >
         <action
-            android:id="@+id/action_saturday_fragment_to_timer_Fragment"
-            app:destination="@id/timer_Fragment" />
-        <action
             android:id="@+id/action_saturday_fragment_to_subject_Statistics_Fragement"
             app:destination="@id/subject_Statistics_Fragement" />
+        <action
+            android:id="@+id/action_saturday_fragment_to_timer_Activity"
+            app:destination="@id/timer_Activity" />
     </fragment>
     <fragment
         android:id="@+id/sunday_fragment"
         android:name="com.example.studymaster.sunday_fragment"
         android:label="sunday_fragment" >
-        <action
-            android:id="@+id/action_sunday_fragment_to_timer_Fragment"
-            app:destination="@id/timer_Fragment" />
         <action
             android:id="@+id/action_sunday_fragment_to_subject_Statistics_Fragement"
             app:destination="@id/subject_Statistics_Fragement" />
@@ -76,7 +79,11 @@
     <fragment
         android:id="@+id/subject_Statistics_Fragement"
         android:name="com.example.studymaster.Subject_Statistics_Fragement"
-        android:label="Subject_Statistics_Fragement" />
+        android:label="Subject_Statistics_Fragement" >
+        <action
+            android:id="@+id/action_subject_Statistics_Fragement_to_timer_Activity"
+            app:destination="@id/timer_Activity" />
+    </fragment>
     <fragment
         android:id="@+id/timer_Fragment"
         android:name="com.example.studymaster.Timer_Fragment"
@@ -86,11 +93,11 @@
         android:name="com.example.studymaster.monday_fragment"
         android:label="monday_fragment">
         <action
-            android:id="@+id/action_monday_fragment_to_timer_Fragment"
-            app:destination="@id/timer_Fragment" />
-        <action
             android:id="@+id/action_monday_fragment_to_subject_Statistics_Fragement"
             app:destination="@id/subject_Statistics_Fragement" />
+        <action
+            android:id="@+id/action_monday_fragment_to_timer_Activity"
+            app:destination="@id/timer_Activity" />
     </fragment>
     <fragment
         android:id="@+id/startFragment"
@@ -99,5 +106,12 @@
         <action
             android:id="@+id/action_startFragment_to_monday_fragment"
             app:destination="@id/monday_fragment" />
+        <action
+            android:id="@+id/action_startFragment_to_timer_Activity"
+            app:destination="@id/timer_Activity" />
     </fragment>
+    <activity
+        android:id="@+id/timer_Activity"
+        android:name="com.example.studymaster.Timer_Activity"
+        android:label="Timer_Activity" />
 </navigation>

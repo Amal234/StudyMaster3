@@ -69,6 +69,7 @@ class monday_fragment : Fragment() {
             timeList.adapter = adapter
         }
 
+
         return binding.root
         }
 }
