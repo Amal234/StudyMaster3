@@ -3,25 +3,19 @@ package com.example.studymaster
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.hardware.SensorManager
 import android.os.Bundle
-import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Adapter
+import android.widget.AdapterView
+import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.Navigation
 import com.example.studymaster.databinding.MondayBinding
 import kotlinx.android.synthetic.main.custom_item_layout.*
-import kotlinx.android.synthetic.main.custom_item_layout.view.*
 import kotlinx.android.synthetic.main.monday.*
-import java.util.*
-import kotlin.collections.ArrayList
 
 
 /**
@@ -70,8 +64,16 @@ class monday_fragment : Fragment() {
         }
 
 
+
+
         return binding.root
         }
+}
+
+private fun <T : Adapter?> AdapterView<T>.setOnItemClickListener(createNavigateOnClickListener: View.OnClickListener) {
+    Navigation.createNavigateOnClickListener(R.id.action_monday_fragment_to_timer_Activity)
+
+
 }
 
 

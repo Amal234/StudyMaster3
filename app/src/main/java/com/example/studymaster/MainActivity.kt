@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             // start your next activity
             startActivity(intent)
         }
+
         // to get reference to the button and  and assign it to immutable variable
 
         // to add an action

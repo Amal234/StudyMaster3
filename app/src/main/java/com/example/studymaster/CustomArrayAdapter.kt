@@ -2,16 +2,16 @@ package com.example.studymaster
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.system.Os.remove
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.example.studymaster.monday_fragment
-import javax.security.auth.Subject
+import androidx.core.content.ContextCompat.startActivity
 
 
-class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: ArrayList<String>, context: Context) : BaseAdapter(), ListAdapter {
+class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: ArrayList<String>, private val context: Context) : BaseAdapter(), ListAdapter {
+
 
 
     private val inflater =
@@ -48,6 +48,22 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
         val imageButtonStart = rowView.findViewById(R.id.image_Start) as ImageButton
 
 
+        imageButtonStart.setOnClickListener {
+            Toast.makeText(context, "You clicked me.", Toast.LENGTH_SHORT).show()
+            for (i in list) {
+
+                val intent = Intent(context, Timer_Activity::class.java).apply {
+                    putExtra("position", position)
+             //      startActivity(intent )
+                }
+                //val intent = Intent( context , Timer_Activity::class.java)
+               // startFragment
+
+                // Navigation.createNavigateOnClickListener(R.id.action_monday_fragment_to_timer_Activity)
+
+            }
+        }
+
         /*ima.setOnClickListener {
             val subject = editText.text
             arrayList.add(subject.toString())
@@ -65,7 +81,12 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
 
         }
         */
+
+
         return rowView
 
     }
+
 }
+
+

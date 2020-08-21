@@ -1,5 +1,6 @@
 package com.example.studymaster
 
+import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.studymaster.databinding.ActivityHostBinding
 import kotlinx.android.synthetic.main.activity_host.*
+import kotlinx.android.synthetic.main.custom_item_layout.*
 
 
 class hostActivity : AppCompatActivity() {
@@ -69,6 +71,8 @@ class hostActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.container, fragmentStats)
                 .commit()
         }
+
+
 
 
         //Mandatory code to hide the keyboard after typing
