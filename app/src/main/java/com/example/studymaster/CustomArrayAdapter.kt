@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.ContextCompat.startActivity
-
+import android.widget.AdapterView.OnItemClickListener
+import androidx.core.content.ContextCompat.startActivity
+import kotlinx.android.synthetic.main.monday.*
 
 class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: ArrayList<String>, private val context: Context) : BaseAdapter(), ListAdapter {
 
@@ -26,6 +28,7 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
         return list[pos]
     }
 
+
     override fun getItemId(pos: Int): Long {
         return 0
         //just return 0 if your list items do not have an Id variable.
@@ -36,8 +39,7 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
         val rowView = inflater.inflate(R.layout.custom_item_layout, parent, false)
 
         //All Elements in our customlayout
-        val listItemText =
-            rowView.findViewById(R.id.list_item_string) as TextView
+        val listItemText = rowView.findViewById(R.id.list_item_string) as TextView
         listItemText.text = list[position]
 
         val TimeItemView = rowView.findViewById(R.id.Time) as TextView
@@ -48,45 +50,34 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
         val imageButtonStart = rowView.findViewById(R.id.image_Start) as ImageButton
 
 
-        imageButtonStart.setOnClickListener {
-            Toast.makeText(context, "You clicked me.", Toast.LENGTH_SHORT).show()
-            for (i in list) {
 
-                val intent = Intent(context, Timer_Activity::class.java).apply {
-                    putExtra("position", position)
-             //      startActivity(intent )
-                }
-                //val intent = Intent( context , Timer_Activity::class.java)
-               // startFragment
-
-                // Navigation.createNavigateOnClickListener(R.id.action_monday_fragment_to_timer_Activity)
-
-            }
+        //function to delete subject AND time
+        fun removeAll(pos: Any){
+            list.remove(pos)
+            var posi= tlist.get(position) //WHY????????
+            tlist.remove(posi)
+            notifyDataSetInvalidated()
         }
 
-        /*ima.setOnClickListener {
-            val subject = editText.text
-            arrayList.add(subject.toString())
 
-            subjectList.adapter = adapter
-            timeSpinner.adapter = adapter_time
-
-        *
-        //Methods? (for populate and/or do something) of the elements above
         imageButtonDelete.setOnClickListener {
-            //do something
-
-            rowView.remove(position)
+            //Toast.makeText(context, "Delete Clicked.", Toast.LENGTH_SHORT).show()
+            val positionToRemove:Any = getItem(position)
+            removeAll(positionToRemove)
             notifyDataSetChanged()
+    }
 
-        }
-        */
-
+        imageButtonStart.setOnClickListener {
+            var timeInPosition:Any = tlist.get(position)
+            val intent = Intent(context, Timer_Activity::class.java)
+            //Toast.makeText(context,"Time" + timeInPosition, Toast.LENGTH_SHORT).show()
+            context.startActivity(intent)
+            notifyDataSetChanged()
+            }
+        
 
         return rowView
 
     }
-
 }
-
 

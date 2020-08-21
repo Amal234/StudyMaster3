@@ -60,21 +60,17 @@ class monday_fragment : Fragment() {
             arrayTime.add(time.toString())
 
             subjectList.adapter = adapter
+            subjectList.invalidate()
             timeList.adapter = adapter
+            timeList.invalidate()
+
         }
-
-
-
 
         return binding.root
         }
 }
 
-private fun <T : Adapter?> AdapterView<T>.setOnItemClickListener(createNavigateOnClickListener: View.OnClickListener) {
-    Navigation.createNavigateOnClickListener(R.id.action_monday_fragment_to_timer_Activity)
 
-
-}
 
 
 

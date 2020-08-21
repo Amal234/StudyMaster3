@@ -43,7 +43,7 @@ class hostActivity : AppCompatActivity() {
         val fragmentTu = tuesday_fragment()
         binding.buttonDi.setOnClickListener {
             supportFragmentManager.beginTransaction().replace(R.id.container, fragmentTu).commit()
-        }
+    }
 
         val fragmentMi = wednesday_fragment()
         binding.buttonMi.setOnClickListener {

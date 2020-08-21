@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Timer_Activity"></activity>
+        <activity
+            android:name=".Timer_Activity"
+            android:parentActivityName=".hostActivity">
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
