@@ -47,6 +47,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
+
     <ImageButton
         android:id="@+id/image_Start"
         android:layout_width="48dp"
@@ -54,5 +55,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_media_play" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

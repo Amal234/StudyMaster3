@@ -46,6 +46,7 @@ class monday_fragment : Fragment() {
         val adapter = MyCustomAdapter(myarrayList, arrayTime, activity as Context)
 
 
+
         //adapter for subject
         //val adapter: ArrayAdapter<*> = ArrayAdapter(activity as Context, android.R.layout.simple_list_item_1, arrayList)
 
@@ -65,6 +66,7 @@ class monday_fragment : Fragment() {
             timeList.invalidate()
 
         }
+
 
         return binding.root
         }

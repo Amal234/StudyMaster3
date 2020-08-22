@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.monday.*
 class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: ArrayList<String>, private val context: Context) : BaseAdapter(), ListAdapter {
 
 
-
     private val inflater =
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
@@ -50,11 +49,10 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
         val imageButtonStart = rowView.findViewById(R.id.image_Start) as ImageButton
 
 
-
         //function to delete subject AND time
         fun removeAll(pos: Any){
             list.remove(pos)
-            var posi= tlist.get(position) //WHY????????
+            val posi= tlist.get(position) //WHY????????
             tlist.remove(posi)
             notifyDataSetInvalidated()
         }
@@ -68,16 +66,24 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
     }
 
         imageButtonStart.setOnClickListener {
-            var timeInPosition:Any = tlist.get(position)
+            var timeInPos = TimeItemView.text.toString()
+            var subjectInPos = listItemText.text.toString()
+            //var timeInPosition:Int = tlist.get(position).toInt()
+            //Toast.makeText(context, timeInPos, Toast.LENGTH_SHORT).show()
             val intent = Intent(context, Timer_Activity::class.java)
-            //Toast.makeText(context,"Time" + timeInPosition, Toast.LENGTH_SHORT).show()
+            intent.putExtra("TimeInPosition", timeInPos)
+            intent.putExtra("SubjectInPosition", subjectInPos)
             context.startActivity(intent)
+
             notifyDataSetChanged()
             }
-        
+
+
 
         return rowView
 
     }
+
+
 }
 
