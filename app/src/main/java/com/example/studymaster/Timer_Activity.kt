@@ -13,100 +13,87 @@ import com.example.studymaster.databinding.TimerBinding
 import java.util.*
 
 
+//ToDO: minuten + sekunden only
+
+
 class Timer_Activity : AppCompatActivity() {
 
-    private val START_TIME_IN_MILLIS: Long = 36000000
-
-
-    //ToDO timestring to Millisekunden
-    //TODO BackButton
-
+    // private val START_TIME_IN_MILLIS: Long = 36000000
     private lateinit var binding: TimerBinding
+    var mTimerRunning = false
 
     var mTextViewCountDown: TextView? = null
-    var mButtonStartPause: Button? = null
-    var mButtonReset: Button? = null
+
     var mCountDownTimer: CountDownTimer? = null
-    var mTimerRunning = false
-    var mTimeLeftInMillis = START_TIME_IN_MILLIS
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<TimerBinding>(this, R.layout.timer)
+
+        mTextViewCountDown = findViewById(R.id.text_view_countdown)
+        var mButtonStart = binding.buttonStart
+        var mButtonPause = binding.buttonPause
+        var mTimeLeftInMillis:Long = 0
 
 
         //get Time-value from CustomArrayAdapter Class
         val intent = intent
         val receivedTime = intent.getStringExtra("TimeInPosition")
         val receivedSubject = intent.getStringExtra("SubjectInPosition")
-
-
-        val StartB = binding.buttonStart
-
-        mTextViewCountDown = findViewById(R.id.text_view_countdown)
-       // mButtonStartPause = findViewById(R.idbutton_start_pause)
-        //mButtonReset = findViewById(R.id.button_reset)
-
         binding.TextViewStudySubject.append(receivedSubject)
+        binding.textViewCountdown.setText(receivedTime)
 
-        StartB.setOnClickListener(View.OnClickListener {
-            Toast.makeText(this, "Subject: "+ receivedSubject + ", Time" +  receivedTime , Toast.LENGTH_SHORT).show()
+    //schwacher code!!
+        if (receivedTime == "00:30:00") {
+            mTimeLeftInMillis= 1800000
+        } else if (receivedTime == "01:00:00") {
+            mTimeLeftInMillis = 3600000
+        }
 
-           /* if (mTimerRunning) {
-                pauseTimer()
-            } else {
-                startTimer()
-            }*/
+
+        fun startTimer() {
+            mCountDownTimer = object : CountDownTimer(mTimeLeftInMillis, 100000) {
+                override fun onTick(millisUntilFinished: Long) {
+                    mTimeLeftInMillis = millisUntilFinished
+
+                    fun updateCountDownText() {
+                        val hours = (mTimeLeftInMillis / 1000).toInt() /3600000
+                        val minutes = (mTimeLeftInMillis / 1000).toInt() / 60
+                        val seconds = (mTimeLeftInMillis/1000).toInt() % 60
+
+
+                        val timeLeftFormatted =
+                            String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, seconds)
+                        mTextViewCountDown!!.text = timeLeftFormatted
+                    }
+                    updateCountDownText()
+                }
+
+                override fun onFinish() {
+                    mTimerRunning = false
+                }
+
+            }.start()
+            mTimerRunning = true
+
+        }
+
+        fun pauseTimer() {
+            mCountDownTimer!!.cancel()
+            mTimerRunning = false
+
+        }
+
+        mButtonStart.setOnClickListener(View.OnClickListener {
+            startTimer()
+                })
+
+        mButtonPause.setOnClickListener(View.OnClickListener {
+            pauseTimer()
+
         })
 
     }
- /*
-
-    private fun startTimer() {
-        mCountDownTimer = object : CountDownTimer(mTimeLeftInMillis, 100000) {
-            override fun onTick(millisUntilFinished: Long) {
-                mTimeLeftInMillis = millisUntilFinished
-                updateCountDownText()
-            }
-
-            override fun onFinish() {
-                mTimerRunning = false
-                mButtonStartPause!!.text = "Start"
-                mButtonStartPause!!.visibility = View.INVISIBLE
-                mButtonReset!!.visibility = View.VISIBLE
-            }
-        }.start()
-        mTimerRunning = true
-        mButtonStartPause!!.text = "pause"
-        mButtonReset!!.visibility = View.INVISIBLE
-
-    }
-
-    private fun pauseTimer() {
-        mCountDownTimer!!.cancel()
-        mTimerRunning = false
-        mButtonStartPause!!.text = "Start"
-        mButtonReset!!.visibility = View.VISIBLE
-    }
-
-    private fun resetTimer() {
-        mTimeLeftInMillis =
-            START_TIME_IN_MILLIS
-        updateCountDownText()
-        mButtonReset!!.visibility = View.INVISIBLE
-        mButtonStartPause!!.visibility = View.VISIBLE
-    }
-
-    private fun updateCountDownText() {
-        val hours = (mTimeLeftInMillis / 1000).toInt() /3600000
-        val minutes = (mTimeLeftInMillis / 1000).toInt() % 60
-
-
-        val timeLeftFormatted =
-            String.format(Locale.getDefault(), "%02d:%02d", hours, minutes)
-        mTextViewCountDown!!.text = timeLeftFormatted
-    }
-    */
-
-
 }
