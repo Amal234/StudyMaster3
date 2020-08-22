@@ -9,8 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.studymaster.databinding.TimerBinding
-import com.example.studymaster.MyCustomAdapter
-
 
 import java.util.*
 
@@ -43,25 +41,26 @@ class Timer_Activity : AppCompatActivity() {
         val receivedSubject = intent.getStringExtra("SubjectInPosition")
 
 
-        mTextViewCountDown = findViewById(R.id.text_view_countdown)
-        mButtonStartPause = findViewById(R.id.button_start_pause)
-        mButtonReset = findViewById(R.id.button_reset)
-        mButtonStartPause?.setOnClickListener(View.OnClickListener {
+        val StartB = binding.buttonStart
 
+        mTextViewCountDown = findViewById(R.id.text_view_countdown)
+       // mButtonStartPause = findViewById(R.idbutton_start_pause)
+        //mButtonReset = findViewById(R.id.button_reset)
+
+        binding.TextViewStudySubject.append(receivedSubject)
+
+        StartB.setOnClickListener(View.OnClickListener {
             Toast.makeText(this, "Subject: "+ receivedSubject + ", Time" +  receivedTime , Toast.LENGTH_SHORT).show()
 
-            if (mTimerRunning) {
+           /* if (mTimerRunning) {
                 pauseTimer()
             } else {
                 startTimer()
-            }
+            }*/
         })
 
-
-        mButtonReset?.setOnClickListener(View.OnClickListener { resetTimer() })
-        updateCountDownText()
     }
-
+ /*
 
     private fun startTimer() {
         mCountDownTimer = object : CountDownTimer(mTimeLeftInMillis, 100000) {
@@ -107,5 +106,7 @@ class Timer_Activity : AppCompatActivity() {
             String.format(Locale.getDefault(), "%02d:%02d", hours, minutes)
         mTextViewCountDown!!.text = timeLeftFormatted
     }
+    */
+
 
 }

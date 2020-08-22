@@ -15,7 +15,7 @@
         />
 
     <TextView
-        android:id="@+id/StudySubject"
+        android:id="@+id/TextViewStudySubject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -26,25 +26,25 @@
         android:paddingTop="16dp"
         android:paddingEnd="16dp"
         android:paddingBottom="16dp"
-        android:text="@string/studying_subject"
+        android:text="@string/TextViewStudying_subject"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
 
     <TextView
         android:id="@+id/text_view_countdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/StudySubject"
+        android:layout_below="@+id/TextViewStudySubject"
         android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="143dp"
-        android:layout_marginTop="171dp"
-        android:layout_toEndOf="@id/StudySubject"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="142dp"
+        android:layout_toEndOf="@id/TextViewStudySubject"
         android:text="@string/zero"
         android:textColor="@android:color/black"
         android:textSize="60sp" />
-
 
     <ImageButton
         android:id="@+id/button_start"
