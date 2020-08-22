@@ -20,6 +20,9 @@ class Timer_Activity : AppCompatActivity() {
     private val START_TIME_IN_MILLIS: Long = 36000000
 
 
+    //ToDO timestring to Millisekunden
+    //TODO BackButton
+
     private lateinit var binding: TimerBinding
 
     var mTextViewCountDown: TextView? = null
@@ -58,6 +61,7 @@ class Timer_Activity : AppCompatActivity() {
         mButtonReset?.setOnClickListener(View.OnClickListener { resetTimer() })
         updateCountDownText()
     }
+
 
     private fun startTimer() {
         mCountDownTimer = object : CountDownTimer(mTimeLeftInMillis, 100000) {

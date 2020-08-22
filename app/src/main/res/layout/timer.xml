@@ -9,36 +9,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        />
+
+    <TextView
+        android:id="@+id/StudySubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="0dp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:text="@string/studying_subject"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
     <TextView
         android:id="@+id/text_view_countdown"
-        android:layout_width="281dp"
-        android:layout_height="131dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/StudySubject"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="232dp"
-        android:text="00:00"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="171dp"
+        android:layout_toEndOf="@id/StudySubject"
+        android:text="@string/zero"
         android:textColor="@android:color/black"
         android:textSize="60sp" />
 
-    <Button
-        android:id="@+id/button_start_pause"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_view_countdown"
-        android:layout_centerHorizontal="true"
-        android:text="start" />
 
-    <Button
-        android:id="@+id/button_reset"
+    <ImageButton
+        android:id="@+id/button_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_view_countdown"
-        android:layout_marginStart="11dp"
-        android:layout_toEndOf="@+id/button_start_pause"
-        android:text="reset"
-        android:visibility="invisible"
-        tools:visibility="visible" />
+        android:layout_alignStart="@+id/text_view_countdown"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="131dp"
+        app:srcCompat="@android:drawable/ic_media_play"
+        android:contentDescription="@string/playbutton" />
+
+    <ImageButton
+        android:id="@+id/button_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_countdown"
+        android:layout_alignEnd="@+id/text_view_countdown"
+        android:layout_alignBottom="@+id/button_start"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="237dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="0dp"
+
+        app:srcCompat="@android:drawable/ic_media_pause"
+        android:contentDescription="@string/pausebutton" />
 
 </RelativeLayout>
 </layout>

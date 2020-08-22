@@ -30,9 +30,15 @@
     <string name="toolbarTitleWeeklyPlanner">Weekly Planner</string>
     <string name="StartTimerButton">Start</string>
     <string name="usersubject">your subject</string>
+    <string name="studying_subject">Studying: Subject</string>
+    <string name="Zeros">00:00</string>
+    <string name="zero">00:00</string>
+    <string name="playbutton">derPlayButton</string>
+    <string name="pausebutton">derPauseButton</string>
 
 
     <string-array name="subjectTimeList">
+        <item>00:30</item>
         <item>01:00</item>
         <item>01:15</item>
         <item>01:30</item>
