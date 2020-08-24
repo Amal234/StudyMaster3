@@ -88,6 +88,7 @@ class Timer_Activity : AppCompatActivity() {
 
         mButtonStart.setOnClickListener(View.OnClickListener {
             startTimer()
+
                 })
 
         mButtonPause.setOnClickListener(View.OnClickListener {

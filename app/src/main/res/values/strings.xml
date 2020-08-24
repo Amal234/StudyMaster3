@@ -37,11 +37,11 @@
 
 
     <string-array name="subjectTimeList">
-        <item>00:30</item>
-        <item>01:00</item>
-        <item>01:15</item>
-        <item>01:30</item>
-        <item>01:45</item>
+        <item>00:30:00</item>
+        <item>01:00:00</item>
+        <item>01:15:00</item>
+        <item>01:30:00</item>
+        <item>01:45:00</item>
         <item>02:00</item>
         <item>02:15</item>
         <item>02:30</item>
