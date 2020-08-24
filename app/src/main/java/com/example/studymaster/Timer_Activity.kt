@@ -18,7 +18,7 @@ import java.util.*
 
 class Timer_Activity : AppCompatActivity() {
 
-    // private val START_TIME_IN_MILLIS: Long = 36000000
+  //  private val START_TIME_IN_MILLIS: Long = 36000000
     private lateinit var binding: TimerBinding
     var mTimerRunning = false
 
@@ -63,7 +63,7 @@ class Timer_Activity : AppCompatActivity() {
 
 
         fun startTimer() {
-            mCountDownTimer = object : CountDownTimer(mTimeLeftInMillis, 100000) {
+            mCountDownTimer = object : CountDownTimer(mTimeLeftInMillis, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                     mTimeLeftInMillis = millisUntilFinished
 
@@ -75,7 +75,8 @@ class Timer_Activity : AppCompatActivity() {
 
                         val timeLeftFormatted =
                             String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, seconds)
-                        mTextViewCountDown!!.text = timeLeftFormatted
+
+                        mTextViewCountDown!!.setText(timeLeftFormatted)
 
                     }
                     updateCountDownText()
