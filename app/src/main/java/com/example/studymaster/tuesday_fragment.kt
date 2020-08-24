@@ -10,10 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
-import com.example.studymaster.databinding.MondayBinding
 import com.example.studymaster.databinding.TuesdayBinding
-import kotlinx.android.synthetic.main.custom_item_layout.*
 import kotlinx.android.synthetic.main.monday.*
 
 
@@ -43,9 +40,6 @@ class tuesday_fragment : Fragment() {
         //val timeSpinner= binding.TimeSpinner
 
         val adapter = MyCustomAdapter(myarrayList, arrayTime, activity as Context)
-
-
-
 
 
         addButton.setOnClickListener {
