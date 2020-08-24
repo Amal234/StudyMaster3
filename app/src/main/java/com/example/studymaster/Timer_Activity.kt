@@ -46,11 +46,20 @@ class Timer_Activity : AppCompatActivity() {
         binding.textViewCountdown.setText(receivedTime)
 
     //schwacher code!!
-        if (receivedTime == "00:30:00") {
+        when (true) {
+            receivedTime == "00:30:00" ->  mTimeLeftInMillis= 1800000
+            receivedTime == "01:00:00" -> mTimeLeftInMillis= 3600000
+            receivedTime == "01:15:00" -> mTimeLeftInMillis= 4500000
+            receivedTime == "01:30:00" -> mTimeLeftInMillis= 5400000   // wandelt die stunden um
+
+           // receivedTime == "01"
+
+        }
+        /*if (receivedTime == "00:30:00") {
             mTimeLeftInMillis= 1800000
         } else if (receivedTime == "01:00:00") {
             mTimeLeftInMillis = 3600000
-        }
+        }*/
 
 
         fun startTimer() {
@@ -67,6 +76,7 @@ class Timer_Activity : AppCompatActivity() {
                         val timeLeftFormatted =
                             String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, seconds)
                         mTextViewCountDown!!.text = timeLeftFormatted
+
                     }
                     updateCountDownText()
                 }
@@ -76,10 +86,9 @@ class Timer_Activity : AppCompatActivity() {
                 }
 
             }.start()
+
             mTimerRunning = true
-
         }
-
         fun pauseTimer() {
             mCountDownTimer!!.cancel()
             mTimerRunning = false
@@ -90,7 +99,6 @@ class Timer_Activity : AppCompatActivity() {
             startTimer()
 
                 })
-
         mButtonPause.setOnClickListener(View.OnClickListener {
             pauseTimer()
 
