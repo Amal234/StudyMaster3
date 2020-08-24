@@ -68,8 +68,9 @@ class Timer_Activity : AppCompatActivity() {
                     mTimeLeftInMillis = millisUntilFinished
 
                     fun updateCountDownText() {
-                        val hours = (mTimeLeftInMillis / 1000).toInt() /3600000
-                        val minutes = (mTimeLeftInMillis / 1000).toInt() / 60
+
+                        val hours = (mTimeLeftInMillis / 1000).toInt() /3600
+                        val minutes = (mTimeLeftInMillis / 1000).toInt() %3600 / 60
                         val seconds = (mTimeLeftInMillis/1000).toInt() % 60
 
 
