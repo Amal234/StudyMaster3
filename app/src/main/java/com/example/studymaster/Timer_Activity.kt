@@ -3,9 +3,7 @@ package com.example.studymaster
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.studymaster.databinding.TimerBinding
@@ -42,29 +40,33 @@ class Timer_Activity : AppCompatActivity() {
         val intent = intent
         val receivedTime = intent.getStringExtra("TimeInPosition")
         val receivedSubject = intent.getStringExtra("SubjectInPosition")
+
+        //append time with 'seconds' inside the timer
+        val receivedTime_formatted = receivedTime + ":00"
+
         binding.TextViewStudySubject.append(receivedSubject)
-        binding.textViewCountdown.setText(receivedTime)
+        binding.textViewCountdown.setText(receivedTime_formatted)
 
     //schwacher code!!
         when (true) {
-            receivedTime == "00:30:00" ->  mTimeLeftInMillis= 1800000
-            receivedTime == "01:00:00" -> mTimeLeftInMillis= 3600000
-            receivedTime == "01:15:00" -> mTimeLeftInMillis= 4500000
-            receivedTime == "01:30:00" -> mTimeLeftInMillis= 5400000
-            receivedTime == "01:45:00" -> mTimeLeftInMillis = 6300000
-            receivedTime == "02:00:00" -> mTimeLeftInMillis= 7200000
-            receivedTime == "02:15:00" -> mTimeLeftInMillis= 8100000
-            receivedTime == "02:30:00" -> mTimeLeftInMillis = 9000000
-            receivedTime == "02:45:00" -> mTimeLeftInMillis = 9900000
-            receivedTime == "03:00:00" -> mTimeLeftInMillis = 10800000
-            receivedTime == "03:15:00" -> mTimeLeftInMillis = 11700000
-            receivedTime == "03:30:00" -> mTimeLeftInMillis = 12600000
-            receivedTime == "03:45:00" -> mTimeLeftInMillis= 13500000
-            receivedTime == "04:00:00" -> mTimeLeftInMillis = 14400000
-            receivedTime == "04:15:00" -> mTimeLeftInMillis = 15300000
-            receivedTime == "04:30:00" -> mTimeLeftInMillis = 16200000
-            receivedTime == "04:45:00" -> mTimeLeftInMillis = 17100000
-            receivedTime== "05:00:00" -> mTimeLeftInMillis = 18000000
+            receivedTime_formatted == "00:30:00" -> mTimeLeftInMillis = 1800000
+            receivedTime_formatted == "01:00:00" -> mTimeLeftInMillis = 3600000
+            receivedTime_formatted == "01:15:00" -> mTimeLeftInMillis = 4500000
+            receivedTime_formatted == "01:30:00" -> mTimeLeftInMillis = 5400000
+            receivedTime_formatted == "01:45:00" -> mTimeLeftInMillis = 6300000
+            receivedTime_formatted == "02:00:00" -> mTimeLeftInMillis = 7200000
+            receivedTime_formatted == "02:15:00" -> mTimeLeftInMillis = 8100000
+            receivedTime_formatted == "02:30:00" -> mTimeLeftInMillis = 9000000
+            receivedTime_formatted == "02:45:00" -> mTimeLeftInMillis = 9900000
+            receivedTime_formatted == "03:00:00" -> mTimeLeftInMillis = 10800000
+            receivedTime_formatted == "03:15:00" -> mTimeLeftInMillis = 11700000
+            receivedTime_formatted == "03:30:00" -> mTimeLeftInMillis = 12600000
+            receivedTime_formatted == "03:45:00" -> mTimeLeftInMillis = 13500000
+            receivedTime_formatted == "04:00:00" -> mTimeLeftInMillis = 14400000
+            receivedTime_formatted == "04:15:00" -> mTimeLeftInMillis = 15300000
+            receivedTime_formatted == "04:30:00" -> mTimeLeftInMillis = 16200000
+            receivedTime_formatted == "04:45:00" -> mTimeLeftInMillis = 17100000
+            receivedTime_formatted == "05:00:00" -> mTimeLeftInMillis = 18000000
 
 
          // receivedTime == "01"
