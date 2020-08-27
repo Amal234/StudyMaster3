@@ -34,7 +34,7 @@ class hostActivity : AppCompatActivity() {
         supportActionBar?.setHomeButtonEnabled(true)
         this.setTitle("Weekly Planner")
         supportActionBar?.setHomeAsUpIndicator(R.id.toolbar)
-      
+
         // toolbar?.setNavigationIcon(getResources().getDrawable(R.drawable.ic_check_white_24dp));
         toolbar?.setNavigationOnClickListener {
 
@@ -52,6 +52,7 @@ class hostActivity : AppCompatActivity() {
         val fragmentMo = monday_fragment()
         binding.buttonMo.setOnClickListener {
             supportFragmentManager.beginTransaction().replace(R.id.container, fragmentMo).commit()
+
         }
 
         val fragmentTu = tuesday_fragment()

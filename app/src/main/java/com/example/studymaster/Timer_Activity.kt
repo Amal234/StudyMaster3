@@ -47,6 +47,7 @@ class Timer_Activity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
+        toolbar?.setTitle("YOUR TIMER")
 
         //get Time-value from CustomArrayAdapter Class
         val intent = intent

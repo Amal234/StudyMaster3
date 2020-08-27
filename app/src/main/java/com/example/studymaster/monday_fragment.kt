@@ -48,6 +48,7 @@ class monday_fragment : Fragment() {
         //val timeSpinner= binding.TimeSpinner
 
         val adapter = MyCustomAdapter(myarrayList, arrayTime, activity as Context)
+        adapter.notifyDataSetChanged()
 
 
 
@@ -69,6 +70,7 @@ class monday_fragment : Fragment() {
             timeList.adapter = adapter
             timeList.invalidate()
             subject.clear()
+
 
         }
 
