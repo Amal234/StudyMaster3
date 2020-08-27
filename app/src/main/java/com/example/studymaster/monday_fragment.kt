@@ -4,16 +4,19 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.TextKeyListener.clear
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.Button
+import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.studymaster.databinding.MondayBinding
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.custom_item_layout.*
 import kotlinx.android.synthetic.main.monday.*
 
@@ -31,6 +34,7 @@ class monday_fragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
 
 
     ): View? {
@@ -64,6 +68,7 @@ class monday_fragment : Fragment() {
             subjectList.invalidate()
             timeList.adapter = adapter
             timeList.invalidate()
+            subject.clear()
 
         }
 

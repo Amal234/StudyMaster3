@@ -33,6 +33,7 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
         //just return 0 if your list items do not have an Id variable.
     }
 
+
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
         val rowView = inflater.inflate(R.layout.custom_item_layout, parent, false)

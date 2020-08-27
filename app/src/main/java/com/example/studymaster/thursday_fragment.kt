@@ -43,6 +43,7 @@ class thursday_fragment : Fragment() {
 
             subjectList.adapter = adapter
             timeList.adapter = adapter
+            subject.clear()
         }
         return binding.root
     }

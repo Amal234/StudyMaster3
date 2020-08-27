@@ -7,8 +7,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import com.example.studymaster.databinding.TimerBinding
+import kotlinx.android.synthetic.main.timer.*
 
 import java.util.*
 
@@ -37,6 +39,14 @@ class Timer_Activity : AppCompatActivity() {
         var mButtonPause = binding.buttonPause
         var mTimeLeftInMillis:Long = 0
 
+
+        val toolbar = findViewById(R.id.toolbar) as Toolbar?
+        setSupportActionBar(toolbar)
+
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
 
         //get Time-value from CustomArrayAdapter Class
         val intent = intent
@@ -70,6 +80,7 @@ class Timer_Activity : AppCompatActivity() {
          // receivedTime == "01"
 
         }
+
         /*if (receivedTime == "00:30:00") {
             mTimeLeftInMillis= 1800000
         } else if (receivedTime == "01:00:00") {

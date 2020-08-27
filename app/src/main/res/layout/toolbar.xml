@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -8,6 +10,9 @@
     android:background="#0E6041"
     android:textAlignment="center"
     app:title="@string/toolbarTitle"
-    app:titleTextColor="@color/white">
+    app:titleTextColor="@color/white"
+    app:navigationIcon="?attr/homeAsUpIndicator"
+
+    >
 
 </androidx.appcompat.widget.Toolbar>
