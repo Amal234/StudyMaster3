@@ -32,6 +32,8 @@ class Timer_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<TimerBinding>(this, R.layout.timer)
 
+
+
         mTextViewCountDown = findViewById(R.id.text_view_countdown)
         var mButtonStart = binding.buttonStart
         var mButtonPause = binding.buttonPause

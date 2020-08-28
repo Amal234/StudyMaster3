@@ -17,36 +17,28 @@ import com.example.studymaster.databinding.ActivityHostBinding
 
 
 
-class hostActivity : AppCompatActivity() {
+class   hostActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHostBinding
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val binding = DataBindingUtil.setContentView<ActivityHostBinding>(this, R.layout.activity_host)
 
-        val toolbar = findViewById(R.id.toolbar) as Toolbar?
-        setSupportActionBar(toolbar)
+
+        val toolbar = (findViewById(R.id.toolbar) as Toolbar?).also {
+            setSupportActionBar(it)
+        }
 
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
-        this.setTitle("Weekly Planner")
-        supportActionBar?.setHomeAsUpIndicator(R.id.toolbar)
-
-        // toolbar?.setNavigationIcon(getResources().getDrawable(R.drawable.ic_check_white_24dp));
-        toolbar?.setNavigationOnClickListener {
-
-                onSupportNavigateUp()
-
-        }
+        toolbar?.setTitle("Weekly Planner")
 
 
 
-        val binding
-                =
-            DataBindingUtil.setContentView<ActivityHostBinding>(this, R.layout.activity_host)
 
 
         val fragmentMo = monday_fragment()
