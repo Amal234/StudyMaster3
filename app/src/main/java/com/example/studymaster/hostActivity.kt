@@ -1,34 +1,48 @@
 package com.example.studymaster
 
-import android.app.PendingIntent.getActivity
+
+import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import com.example.studymaster.databinding.ActivityHostBinding
-import kotlinx.android.synthetic.main.activity_host.*
-import kotlinx.android.synthetic.main.custom_item_layout.*
+
+
 
 
 class hostActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHostBinding
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val toolbar = findViewById(R.id.toolbar) as Toolbar?
         setSupportActionBar(toolbar)
+
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
         this.setTitle("Weekly Planner")
+        supportActionBar?.setHomeAsUpIndicator(R.id.toolbar)
+
+        // toolbar?.setNavigationIcon(getResources().getDrawable(R.drawable.ic_check_white_24dp));
+        toolbar?.setNavigationOnClickListener {
+
+                onSupportNavigateUp()
+
+        }
+
+
 
         val binding
                 =
@@ -38,6 +52,7 @@ class hostActivity : AppCompatActivity() {
         val fragmentMo = monday_fragment()
         binding.buttonMo.setOnClickListener {
             supportFragmentManager.beginTransaction().replace(R.id.container, fragmentMo).commit()
+
         }
 
         val fragmentTu = tuesday_fragment()
@@ -88,6 +103,10 @@ class hostActivity : AppCompatActivity() {
         }
         return super.dispatchTouchEvent(ev)
     }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
     // Extension function to replace fragment
     fun AppCompatActivity.replaceFragment(fragment: Fragment){
         val fragmentManager = supportFragmentManager
@@ -96,5 +115,6 @@ class hostActivity : AppCompatActivity() {
         transaction.addToBackStack(null)
         transaction.commit()
     }
+
 
 }
