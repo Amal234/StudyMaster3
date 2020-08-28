@@ -27,7 +27,6 @@ class Timer_Activity : AppCompatActivity() {
     var mCountDownTimer: CountDownTimer? = null
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<TimerBinding>(this, R.layout.timer)
@@ -125,6 +124,7 @@ class Timer_Activity : AppCompatActivity() {
         fun pauseTimer() {
             mCountDownTimer!!.cancel()
             mTimerRunning = false
+
 
         }
 

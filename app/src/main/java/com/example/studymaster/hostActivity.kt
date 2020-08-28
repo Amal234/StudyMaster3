@@ -31,14 +31,10 @@ class   hostActivity : AppCompatActivity() {
             setSupportActionBar(it)
         }
 
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
         toolbar?.setTitle("Weekly Planner")
-
-
-
 
 
         val fragmentMo = monday_fragment()
@@ -78,8 +74,6 @@ class   hostActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.container, fragmentStats)
                 .commit()
         }
-
-
 
 
         //Mandatory code to hide the keyboard after typing

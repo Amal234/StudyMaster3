@@ -35,28 +35,20 @@ class monday_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
 
-
-
     ): View? {
+
         val binding: MondayBinding = DataBindingUtil.inflate(
             inflater, R.layout.monday, container, false
         )
 
+
         val addButton = binding.addButton
         val subjectList= binding.mylist
         val timeList = binding.mylist
-        //val timeSpinner= binding.TimeSpinner
+
 
         val adapter = MyCustomAdapter(myarrayList, arrayTime, activity as Context)
         adapter.notifyDataSetChanged()
-
-
-
-        //adapter for subject
-        //val adapter: ArrayAdapter<*> = ArrayAdapter(activity as Context, android.R.layout.simple_list_item_1, arrayList)
-
-       //
-        //val adapter_time= ArrayAdapter.createFromResource (activity as Context, R.array.subjectTimeList, android.R.layout.simple_spinner_item)
 
 
         addButton.setOnClickListener {
@@ -70,8 +62,6 @@ class monday_fragment : Fragment() {
             timeList.adapter = adapter
             timeList.invalidate()
             subject.clear()
-
-
         }
 
 

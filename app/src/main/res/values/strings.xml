@@ -24,6 +24,7 @@
     <string name="time_circle">timeCuircle</string>
     <string name="sun_button">S</string>
     <string name="mon_button">M</string>
+    <string name="statistics_title">Your Statistics</string>
 
     <string name="toolbarTitleAbout">About</string>
     <string name="toolbarTitle">StudyMaster</string>

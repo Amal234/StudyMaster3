@@ -33,6 +33,11 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
         //just return 0 if your list items do not have an Id variable.
     }
 
+    //getter für die liste
+    fun getList(): ArrayList<String> {
+        return  list
+    }
+
 
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
@@ -64,7 +69,7 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
             val positionToRemove:Any = getItem(position)
             removeAll(positionToRemove)
             notifyDataSetChanged()
-    }
+        }
 
         imageButtonStart.setOnClickListener {
             var timeInPos = TimeItemView.text.toString()
@@ -79,12 +84,9 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
             notifyDataSetChanged()
             }
 
-
-
         return rowView
 
     }
-
 
 }
 
