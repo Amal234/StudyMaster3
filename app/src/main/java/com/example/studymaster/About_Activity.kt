@@ -14,19 +14,19 @@ class About_Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val binding =
+            DataBindingUtil.setContentView<ActivityAboutBinding>(this, R.layout.activity_about)
 
 
         val toolbar = findViewById(R.id.toolbar) as Toolbar?
         setSupportActionBar(toolbar)
-        //getSupportActionBar()?.setTitle("Your title");
+
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
+        toolbar?.setTitle("YOUR TIMER")
 
 
-    val binding=
-        DataBindingUtil.setContentView<ActivityAboutBinding>(this, R.layout.activity_about)
-
-}
-
+    }
 }
