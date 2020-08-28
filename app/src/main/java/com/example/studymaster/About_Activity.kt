@@ -25,7 +25,7 @@ class About_Activity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
-        toolbar?.setTitle("YOUR TIMER")
+        toolbar?.setTitle("About")
 
 
     }
