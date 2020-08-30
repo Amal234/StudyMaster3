@@ -36,7 +36,7 @@ android {
 dependencies {
 
     def nav_version = "2.0.0"
-
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"

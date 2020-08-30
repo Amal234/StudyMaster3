@@ -37,6 +37,7 @@ class Timer_Activity : AppCompatActivity() {
         var mButtonStart = binding.buttonStart
         var mButtonPause = binding.buttonPause
         var mTimeLeftInMillis:Long = 0
+        var mTimeRuningInMillis : Long = 0
 
 
         val toolbar = findViewById(R.id.toolbar) as Toolbar?
@@ -126,6 +127,10 @@ class Timer_Activity : AppCompatActivity() {
             mTimerRunning = false
 
 
+        }
+        fun passTimeToStatsic(){
+
+    
         }
 
         mButtonStart.setOnClickListener(View.OnClickListener {

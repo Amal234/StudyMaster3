@@ -10,6 +10,7 @@ import android.widget.*
 import androidx.core.content.ContextCompat.startActivity
 import android.widget.AdapterView.OnItemClickListener
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.monday.*
 
 class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: ArrayList<String>, private val context: Context) : BaseAdapter(), ListAdapter {
@@ -35,7 +36,7 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
 
     //getter für die liste
     fun getList(): ArrayList<String> {
-        return  list
+        return list
     }
 
 
@@ -56,9 +57,9 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
 
 
         //function to delete subject AND time
-        fun removeAll(pos: Any){
+        fun removeAll(pos: Any) {
             list.remove(pos)
-            val posi= tlist.get(position) //WHY????????
+            val posi = tlist.get(position) //WHY????????
             tlist.remove(posi)
             notifyDataSetInvalidated()
         }
@@ -66,7 +67,7 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
 
         imageButtonDelete.setOnClickListener {
             //Toast.makeText(context, "Delete Clicked.", Toast.LENGTH_SHORT).show()
-            val positionToRemove:Any = getItem(position)
+            val positionToRemove: Any = getItem(position)
             removeAll(positionToRemove)
             notifyDataSetChanged()
         }
@@ -82,11 +83,17 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
             context.startActivity(intent)
 
             notifyDataSetChanged()
-            }
+        }
+
 
         return rowView
 
     }
 
-}
+
+
+
+    }
+
+
 
