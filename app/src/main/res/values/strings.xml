@@ -35,6 +35,13 @@
     <string name="zero">00:00:00</string>
     <string name="playbutton">derPlayButton</string>
     <string name="pausebutton">derPauseButton</string>
+    <string name="about_us">
+        We are Mehtamaloan! Our team built up with the intention to create
+    a supplementary help for students who struggle to focus while studying.
+    Study Master is a simple App that mainly functions as a countdown timer
+    for each entered subject, to then store your improvement in a statistics´ list.
+    Hold onto your goals and have fun studying! ---Mehtap, Amal und Oana---
+</string>
 
 
     <string-array name="subjectTimeList">
