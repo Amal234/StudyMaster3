@@ -17,20 +17,19 @@
             layout="@layout/toolbar"
             app:title="About us" />
 
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="270dp"
             android:layout_gravity="center"
             android:layout_margin="@dimen/color_item_margins_large"
-            android:inputType="textMultiLine"
+            android:autofillHints=""
             android:text="@string/about_us"
             android:textAlignment="center"
             android:textColor="#3F51B5"
-            android:textSize="20dp">
-
-        </EditText>
+            android:textSize="20sp" />
 
     </LinearLayout>
+
 
 
 

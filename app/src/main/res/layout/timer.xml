@@ -29,7 +29,7 @@
             android:paddingBottom="16dp"
             android:text="@string/TextViewStudying_subject"
             android:textAlignment="center"
-            android:textSize="18sp"
+            android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -65,13 +65,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="80dp"
             android:layout_marginBottom="245dp"
             android:contentDescription="@string/pausebutton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/text_view_countdown"
             app:layout_constraintTop_toBottomOf="@+id/text_view_countdown"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@android:drawable/ic_media_pause" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,17 +3,14 @@ package com.example.studymaster
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.MotionEvent
-import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleObserver
 import com.example.studymaster.databinding.ActivityHostBinding
+import kotlinx.android.synthetic.main.monday.*
 import timber.log.Timber
 
 
@@ -24,6 +21,7 @@ class   hostActivity : AppCompatActivity()  {
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val binding = DataBindingUtil.setContentView<ActivityHostBinding>(this, R.layout.activity_host)
 
 
@@ -38,9 +36,14 @@ class   hostActivity : AppCompatActivity()  {
 
 
         val fragmentMo = monday_fragment()
-        binding.buttonMo.setOnClickListener {
-            supportFragmentManager.beginTransaction().replace(R.id.container, fragmentMo).commit()
-
+        val bla = mylist
+            binding.buttonMo.setOnClickListener {
+            /*if(savedInstanceState!= null){
+                supportFragmentManager.beginTransaction().get(R.id.mylist, bla).retainInstance
+            }*/
+                supportFragmentManager.beginTransaction().replace(R.id.container, fragmentMo)
+                    .commit()
+           // }
         }
 
         val fragmentTu = tuesday_fragment()
@@ -89,48 +92,28 @@ class   hostActivity : AppCompatActivity()  {
         }
         return super.dispatchTouchEvent(ev)
     }
+
+    /*
+    override fun onActivityCreate(savedInstanceState: Bundle?) {
+        if (savedInstanceState != null) {
+            // Get all information from the bundle, set it
+            myarrayList = savedInstanceState.getStringArrayList(KEY_MYARRAYLIST) as ArrayList<String>
+            arrayTime= savedInstanceState.getStringArrayList(KEY_ARRAYTIME) as ArrayList<String>
+            //dessertTimer.secondsCount = savedInstanceState.getInt(KEY_TIMER_SECONDS, 0)
+        }
+
+        val subjectList= binding.mylist
+        val timeList = binding.mylist
+    }
+*/
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }
-    // Extension function to replace fragment
-    fun AppCompatActivity.replaceFragment(fragment: Fragment){
-        val fragmentManager = supportFragmentManager
-        val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.NavHostFragment,fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
-    /** Lifecycle Methods **/
-    override fun onStart() {
-        super.onStart()
-        Timber.i("onStart Called")
-    }
 
-    override fun onResume() {
-        super.onResume()
-        Timber.i("onResume Called")
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Timber.i("onRestoreInstanceState Called")
     }
-
-    override fun onPause() {
-        super.onPause()
-        Timber.i("onPause Called")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Timber.i("onStop Called")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Timber.i("onDestroy Called")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Timber.i("onRestart Called")
-    }
-
 
 }

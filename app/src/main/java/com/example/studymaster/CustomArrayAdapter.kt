@@ -6,12 +6,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
-import androidx.core.content.ContextCompat.startActivity
-import android.widget.AdapterView.OnItemClickListener
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.view.isVisible
-import kotlinx.android.synthetic.main.monday.*
+import android.widget.BaseAdapter
+import android.widget.ImageButton
+import android.widget.ListAdapter
+import android.widget.TextView
 
 class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: ArrayList<String>, private val context: Context) : BaseAdapter(), ListAdapter {
 
