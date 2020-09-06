@@ -30,7 +30,7 @@ class monday_fragment : Fragment() {
     var myarrayList = ArrayList<String>()//Array for user input Subject
     var arrayTime = ArrayList<String>() //Array for user-choosen Time
 
-    private lateinit var  listener: FragmentEvent
+
 
     override fun onAttach(context: Context){
         super.onAttach(context)
@@ -54,12 +54,14 @@ class monday_fragment : Fragment() {
         val timeList=binding.mylist
 
         val adapter = MyCustomAdapter(myarrayList, arrayTime, activity as Context)
+        savedInstanceState?.getStringArrayList("KEY_MYARRAYLIST")
+        savedInstanceState?.getStringArrayList("KEY_ARRAYTIME")
 
 
 
         addButton.setOnClickListener {
 
-            listener.subjectsAdded()
+
             val subject = editText.text
             val time = TimeSpinner.selectedItem
             myarrayList.add(subject.toString())
@@ -70,7 +72,7 @@ class monday_fragment : Fragment() {
             timeList.adapter = adapter
 
             subject.clear()
-
+     adapter.notifyDataSetChanged()
         }
 
         //? view
@@ -85,9 +87,7 @@ class monday_fragment : Fragment() {
         super.onSaveInstanceState(outState)
     }
 
-    interface FragmentEvent{
-        fun subjectsAdded()
-    }
+
 }
 
 

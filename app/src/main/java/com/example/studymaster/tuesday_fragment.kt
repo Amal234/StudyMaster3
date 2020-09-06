@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.studymaster.databinding.TuesdayBinding
 import kotlinx.android.synthetic.main.monday.*
+import timber.log.Timber
 
 
 /**
@@ -40,6 +41,9 @@ class tuesday_fragment : Fragment() {
         //val timeSpinner= binding.TimeSpinner
 
         val adapter = MyCustomAdapter(myarrayList, arrayTime, activity as Context)
+        savedInstanceState?.getStringArrayList("KEY_MYARRAYLIST")
+        savedInstanceState?.getStringArrayList("KEY_ARRAYTIME")
+
 
 
         addButton.setOnClickListener {
@@ -51,12 +55,21 @@ class tuesday_fragment : Fragment() {
             subjectList.adapter = adapter
             timeList.adapter = adapter
             subject.clear()
+            //mylist.invalidateViews()
+            adapter.notifyDataSetChanged()
         }
 
 
 
 
+
         return binding.root
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putStringArrayList(KEY_MYARRAYLIST, myarrayList)
+        outState.putStringArrayList(KEY_ARRAYTIME, arrayTime)
+        Timber.i("onSaveInstanceState Called")
+        super.onSaveInstanceState(outState)
     }
 }
 

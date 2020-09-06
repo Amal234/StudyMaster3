@@ -85,6 +85,7 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
             val posi = tlist.get(position) //WHY????????
             tlist.remove(posi)
             notifyDataSetInvalidated()
+
         }
 
 
@@ -106,6 +107,7 @@ class MyCustomAdapter (private val list: ArrayList<String>, private val tlist: A
             context.startActivity(intent)
 
             notifyDataSetChanged()
+
         }
         return view
 

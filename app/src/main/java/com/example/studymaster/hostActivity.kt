@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,7 @@ class hostActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().add(R.id.container, monday_fragment.newInstance()).commit()
+
         }
 
         val binding = DataBindingUtil.setContentView<ActivityHostBinding>(this, R.layout.activity_host)
@@ -40,7 +42,9 @@ class hostActivity : AppCompatActivity() {
 
         val fragmentMo = monday_fragment()
             binding.buttonMo.setOnClickListener {
+
                 supportFragmentManager.beginTransaction().replace(R.id.container, fragmentMo).commit()
+
             }
 
         val fragmentTu = tuesday_fragment()
@@ -76,11 +80,12 @@ class hostActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.container, fragmentStats)
                 .commit()
         }
-
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         //Mandatory code to hide the keyboard after typing
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+
 
     }
 
