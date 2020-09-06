@@ -21,10 +21,27 @@ const val KEY_MYARRAYLIST = "arraytime"
 
 class monday_fragment : Fragment() {
 
+    companion object {
+        fun newInstance(): monday_fragment {
+            return monday_fragment()
+        }
+    }
+
     var myarrayList = ArrayList<String>()//Array for user input Subject
     var arrayTime = ArrayList<String>() //Array for user-choosen Time
 
-    @SuppressLint("ServiceCast")
+    private lateinit var  listener: FragmentEvent
+
+    override fun onAttach(context: Context){
+        super.onAttach(context)
+        /*if (context is FragmentEvent){
+            listener = context
+        } else {
+            throw ClassCastException(context.toString() + " must implement FragmentEvent")
+        }*/
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -42,6 +59,7 @@ class monday_fragment : Fragment() {
 
         addButton.setOnClickListener {
 
+            listener.subjectsAdded()
             val subject = editText.text
             val time = TimeSpinner.selectedItem
             myarrayList.add(subject.toString())
@@ -52,8 +70,10 @@ class monday_fragment : Fragment() {
             timeList.adapter = adapter
 
             subject.clear()
+
         }
 
+        //? view
         return binding.root
 
         }
@@ -65,12 +85,14 @@ class monday_fragment : Fragment() {
         super.onSaveInstanceState(outState)
     }
 
-
+    interface FragmentEvent{
+        fun subjectsAdded()
+    }
 }
 
-interface OnDogSelected {
-    fun onDogSelected()
-}
+
+
+
 
 
 
