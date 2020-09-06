@@ -68,6 +68,10 @@ class monday_fragment : Fragment() {
 
 }
 
+interface OnDogSelected {
+    fun onDogSelected()
+}
+
 
 
 
